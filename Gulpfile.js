@@ -13,7 +13,7 @@ gulp.task('stylus', function () {
         })
     ];
 
-    return gulp.src('./src/efGrid.styl')
+    return gulp.src('./src/box.styl')
         .pipe(sourcemaps.init())
         .pipe(accord('stylus'))
         .pipe(postcss(postcss_processors))
