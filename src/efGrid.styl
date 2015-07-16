@@ -1,0 +1,91 @@
+@import 'responsive/media'
+
+/* box block */
+.box
+    display: flex
+    box-sizing: border-box
+    flex-flow: row wrap
+
+/* gutters */
+.box--gutters
+    margin: -1em 0 0 -1em
+
+.box--gutters > .box__flex
+    padding: 1em 0 0 1em
+
+/* directions */
+.box--v
+    flex-flow: column nowrap
+
+/* force children to be full height */
+.box--flex > box__flex
+    display: flex;
+
+/* Alignment per row */
+.box--top
+    align-items: flex-start
+
+.box--bottom
+    align-items: flex-end
+
+.box--center
+    align-items: center
+
+/* flex element */
+.box__flex
+    flex: 1;
+    box-sizing: border-box
+    border: 2px solid black
+
+/* Alignment per cell */
+.box__flex--top
+    align-self: flex-start
+
+.box__flex--bottom
+    align-self: flex-end
+
+.box__flex--center
+    align-self: center
+
+.box__flex--full
+    width: 100%
+    flex: 0 0 auto
+
+for num in (1..24)
+    .box__flex--1-{num}
+        width: (100/num)%
+        flex: 0 0 auto
+
+for num in (2..24)
+    .box__flex--{num}-24
+        width: ((num/24)*100)%
+        flex: 0 0 auto
+
+for num in (1..5)
+    .box__flex--{num}-5
+        width: ((num/5)*100)%
+        flex: 0 0 auto
+
+breakpoint(ident, w)
+    @media screen and (min-width: w)
+        for num in (1..24)
+            .box__flex--{ident}-1-{num}
+                width: (100/num)%
+                flex: 0 0 auto
+
+        for num in (2..24)
+            .box__flex--{ident}-{num}-24
+                width: ((num/24)*100)%
+                flex: 0 0 auto
+
+        for num in (1..5)
+            .box__flex--{ident}-{num}-5
+                width: ((num/5)*100)%
+                flex: 0 0 auto
+
+
+breakpoint(media-sm-ident, media-sm)
+breakpoint(media-md-ident, media-md)
+breakpoint(media-lg-ident, media-lg)
+breakpoint(media-xl-ident, media-xl)
+

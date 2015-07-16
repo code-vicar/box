@@ -1,0 +1,19 @@
+{
+  "name": "easyflex",
+  "author": {
+    "name": "Scott Vickers",
+    "email": "",
+    "url": "https://github.com/code-vicar"
+  },
+  "version": "0.0.0",
+  "dependencies": {},
+  "private": true,
+  "devDependencies": {
+    "autoprefixer-core": "^5.2.1",
+    "gulp": "^3.9.0",
+    "gulp-accord": "^0.1.0",
+    "gulp-postcss": "^5.1.9",
+    "gulp-sourcemaps": "^1.5.2",
+    "stylus": "^0.51.1"
+  }
+}
